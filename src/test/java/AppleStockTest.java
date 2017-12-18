@@ -1,5 +1,6 @@
 import static org.hamcrest.core.IsEqual.equalTo;
 
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.junit.Rule;
@@ -31,6 +32,9 @@ public class AppleStockTest {
     testCases.put(new int[]{0, Integer.MAX_VALUE}, Integer.MAX_VALUE);
     testCases.forEach((actualInput, expectedOutput)
         -> errorCollector.checkThat(
+        String.format(
+            "For the stock actions: %s the expected max profit is: %s.",
+            Arrays.toString(actualInput), expectedOutput),
         this.appleStock.getMaxProfit(actualInput), equalTo(expectedOutput)));
   }
 
