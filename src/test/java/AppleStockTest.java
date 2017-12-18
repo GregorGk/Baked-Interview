@@ -22,7 +22,7 @@ public class AppleStockTest {
     Map<int[], Integer> testCases = new LinkedHashMap<>();
     testCases.put(new int[]{1, 2, 3}, 2);
     testCases.put(new int[]{1, 1, 1}, 0);
-    testCases.put(new int[]{3, 2, 1}, 0);
+    testCases.put(new int[]{3, 2, 1}, -1);
     testCases.put(new int[]{1, 2}, 1);
     testCases.put(new int[]{10, 7, 5, 8, 11, 9}, 6);
     testCases.put(new int[]{3, 2, 1, 2, 3, 4}, 3);
