@@ -20,16 +20,21 @@ public class AppleStockTest {
 
   @Test
   public void testTypicalStockGains() {
-    Map<int[], Integer> testCases = new LinkedHashMap<>();
-    testCases.put(new int[]{1, 2, 3}, 2);
-    testCases.put(new int[]{1, 1, 1}, 0);
-    testCases.put(new int[]{3, 2, 1}, -1);
-    testCases.put(new int[]{1, 2}, 1);
-    testCases.put(new int[]{10, 7, 5, 8, 11, 9}, 6);
-    testCases.put(new int[]{3, 2, 1, 2, 3, 4}, 3);
-    testCases.put(new int[]{3, 2, 1, 2, 5, 4, 1}, 4);
-    testCases.put(new int[]{1, 2, 3, 2}, 2);
-    testCases.put(new int[]{0, Integer.MAX_VALUE}, Integer.MAX_VALUE);
+    Map<int[], Long> testCases = new LinkedHashMap<>();
+    testCases.put(new int[]{1, 2, 3}, 2L);
+    testCases.put(new int[]{1, 1, 1}, 0L);
+    testCases.put(new int[]{3, 2, 1}, -1L);
+    testCases.put(new int[]{1, 2}, 1L);
+    testCases.put(new int[]{10, 7, 5, 8, 11, 9}, 6L);
+    testCases.put(new int[]{3, 2, 1, 2, 3, 4}, 3L);
+    testCases.put(new int[]{3, 2, 1, 2, 5, 4, 1}, 4L);
+    testCases.put(new int[]{1, 2, 3, 2}, 2L);
+    testCases.put(new int[]{-1, 0, 1}, 2L);
+    testCases.put(new int[]{0, 0, -1}, 0L);
+    testCases.put(new int[]{0, Integer.MAX_VALUE},
+        (long) Integer.MAX_VALUE);
+    testCases.put(new int[]{Integer.MIN_VALUE, 0, Integer.MAX_VALUE},
+        (long) Integer.MAX_VALUE - (long) Integer.MIN_VALUE);
     testCases.forEach((actualInput, expectedOutput)
         -> errorCollector.checkThat(
         String.format(
