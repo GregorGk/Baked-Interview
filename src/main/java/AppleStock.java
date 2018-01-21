@@ -1,8 +1,9 @@
 class AppleStock {
 
   /**
-   * Returns the maximum of possible profits from yesterday's stocks.
-   * Can be negative.
+   * For loosing scenario the returned value can be negative.
+   *
+   * @return the maximum of possible profits from yesterday's stocks.
    */
   public long getMaxProfit(int[] stockPricesYesterday) {
     if (stockPricesYesterday.length < 2) {
