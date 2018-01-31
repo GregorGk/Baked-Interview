@@ -3,8 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/baked-interview.iml" filepath="$PROJECT_DIR$/.idea/modules/baked-interview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/baked-interview.iml" filepath="$PROJECT_DIR$/.idea/modules/baked-interview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/baked-interview_main.iml" filepath="$PROJECT_DIR$/.idea/modules/baked-interview_main.iml" group="baked-interview" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/baked-interview_main.iml" filepath="$PROJECT_DIR$/.idea/modules/baked-interview_main.iml" group="baked-interview" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/baked-interview_test.iml" filepath="$PROJECT_DIR$/.idea/modules/baked-interview_test.iml" group="baked-interview" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/baked-interview_test.iml" filepath="$PROJECT_DIR$/.idea/modules/baked-interview_test.iml" group="baked-interview" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/src.iml" filepath="$PROJECT_DIR$/.idea/modules/src.iml" />
     </modules>
   </component>
 </project>
