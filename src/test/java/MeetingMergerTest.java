@@ -42,6 +42,9 @@ public class MeetingMergerTest {
     testCases.put(
         List.of(new Meeting(1, 4), new Meeting(2, 3), new Meeting(5, 8)),
         List.of(new Meeting(1, 4), new Meeting(5, 8)));
+    testCases.put(
+        List.of(new Meeting(1, 2), new Meeting(3, 5), new Meeting(4, 5)),
+        List.of(new Meeting(1, 2), new Meeting(3, 5)));
     testCases.forEach((actualInput, expectedOutput)
         -> errorCollector.checkThat(
         String.format(
