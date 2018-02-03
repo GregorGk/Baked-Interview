@@ -1,7 +1,5 @@
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
-import java.rmi.UnexpectedException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
@@ -18,7 +16,7 @@ public class RectangularLoveTest {
   }
 
   @Test
-  public void testForOneRectangleContainedInAnother() {
+  public void testForOneRectangleContainedInAnother() throws NonRectangularObjectException {
     assertEquals(
         this.rectangularLove.intersection(
             new Rectangle(0, 0, 100, 100),
@@ -27,7 +25,7 @@ public class RectangularLoveTest {
   }
 
   @Test
-  public void testWithNegativeCoordinates() {
+  public void testWithNegativeCoordinates() throws NonRectangularObjectException {
     assertEquals(
         this.rectangularLove.intersection(
             new Rectangle(-5, -5, 2, 2),
@@ -38,7 +36,7 @@ public class RectangularLoveTest {
   }
 
   @Test
-  public void testWithNegativeWidthsAndHeights() {
+  public void testWithNegativeWidthsAndHeights() throws NonRectangularObjectException {
     assertEquals(
         this.rectangularLove.intersection(
             new Rectangle(3, 3, -3, -3),
@@ -51,8 +49,8 @@ public class RectangularLoveTest {
   /**
    * Special case! Could be handled in a different way.
    */
-  @Test(expected = UnexpectedException.class)
-  public void testForEmptyIntersections() {
+  @Test(expected = NonRectangularObjectException.class)
+  public void testForEmptyIntersections() throws NonRectangularObjectException {
     this.rectangularLove.intersection(
         new Rectangle(0, 0, 1, 1),
         new Rectangle(5, 5, 1, 1));
@@ -61,8 +59,8 @@ public class RectangularLoveTest {
   /**
    * Special case! Could be handled in a different way.
    */
-  @Test(expected = UnexpectedException.class)
-  public void testForPointIntersection() {
+  @Test(expected = NonRectangularObjectException.class)
+  public void testForPointIntersection() throws NonRectangularObjectException {
     this.rectangularLove.intersection(
         new Rectangle(0, 0, 1, 1),
         new Rectangle(1, 1, 1, 1));
@@ -71,8 +69,8 @@ public class RectangularLoveTest {
   /**
    * Special case! Could be handled in a different way.
    */
-  @Test(expected = UnexpectedException.class)
-  public void testForSegmentIntersection() {
+  @Test(expected = NonRectangularObjectException.class)
+  public void testForSegmentIntersection() throws NonRectangularObjectException {
     this.rectangularLove.intersection(
         new Rectangle(0, 0, 1, 1),
         new Rectangle(1, 0, 1, 1));
