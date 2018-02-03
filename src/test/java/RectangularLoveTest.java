@@ -16,7 +16,7 @@ public class RectangularLoveTest {
   }
 
   @Test
-  public void testForOneRectangleContainedInAnother() throws NonRectangularObjectException {
+  public void testForOneRectangleContainedInAnother() throws TooFewDimensionsException {
     assertEquals(
         this.rectangularLove.intersection(
             new Rectangle(0, 0, 100, 100),
@@ -25,7 +25,7 @@ public class RectangularLoveTest {
   }
 
   @Test
-  public void testWithNegativeCoordinates() throws NonRectangularObjectException {
+  public void testWithNegativeCoordinates() throws TooFewDimensionsException {
     assertEquals(
         this.rectangularLove.intersection(
             new Rectangle(-5, -5, 2, 2),
@@ -36,7 +36,7 @@ public class RectangularLoveTest {
   }
 
   @Test
-  public void testWithNegativeWidthsAndHeights() throws NonRectangularObjectException {
+  public void testWithNegativeWidthsAndHeights() throws TooFewDimensionsException {
     assertEquals(
         this.rectangularLove.intersection(
             new Rectangle(3, 3, -3, -3),
@@ -49,22 +49,22 @@ public class RectangularLoveTest {
   /**
    * Special cases follow! Those can be handled in a different way.
    */
-  @Test(expected = NonRectangularObjectException.class)
-  public void testForEmptyIntersections() throws NonRectangularObjectException {
+  @Test(expected = TooFewDimensionsException.class)
+  public void testForEmptyIntersections() throws TooFewDimensionsException {
     this.rectangularLove.intersection(
         new Rectangle(0, 0, 1, 1),
         new Rectangle(5, 5, 1, 1));
   }
 
-  @Test(expected = NonRectangularObjectException.class)
-  public void testForPointIntersection() throws NonRectangularObjectException {
+  @Test(expected = TooFewDimensionsException.class)
+  public void testForPointIntersection() throws TooFewDimensionsException {
     this.rectangularLove.intersection(
         new Rectangle(0, 0, 1, 1),
         new Rectangle(1, 1, 1, 1));
   }
 
-  @Test(expected = NonRectangularObjectException.class)
-  public void testForSegmentIntersection() throws NonRectangularObjectException {
+  @Test(expected = TooFewDimensionsException.class)
+  public void testForSegmentIntersection() throws TooFewDimensionsException {
     this.rectangularLove.intersection(
         new Rectangle(0, 0, 1, 1),
         new Rectangle(1, 0, 1, 1));

@@ -1,7 +1,7 @@
 public class RectangularLove {
 
   public Rectangle intersection(Rectangle first, Rectangle second)
-      throws NonRectangularObjectException {
+      throws TooFewDimensionsException {
     Rectangle toReturn = null;
     return toReturn;
   }
