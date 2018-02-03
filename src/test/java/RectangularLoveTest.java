@@ -47,7 +47,7 @@ public class RectangularLoveTest {
   }
 
   /**
-   * Special case! Could be handled in a different way.
+   * Special cases follow! Those can be handled in a different way.
    */
   @Test(expected = NonRectangularObjectException.class)
   public void testForEmptyIntersections() throws NonRectangularObjectException {
@@ -56,9 +56,6 @@ public class RectangularLoveTest {
         new Rectangle(5, 5, 1, 1));
   }
 
-  /**
-   * Special case! Could be handled in a different way.
-   */
   @Test(expected = NonRectangularObjectException.class)
   public void testForPointIntersection() throws NonRectangularObjectException {
     this.rectangularLove.intersection(
@@ -66,9 +63,6 @@ public class RectangularLoveTest {
         new Rectangle(1, 1, 1, 1));
   }
 
-  /**
-   * Special case! Could be handled in a different way.
-   */
   @Test(expected = NonRectangularObjectException.class)
   public void testForSegmentIntersection() throws NonRectangularObjectException {
     this.rectangularLove.intersection(
